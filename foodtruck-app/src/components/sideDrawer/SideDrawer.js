@@ -4,13 +4,13 @@ import styled from 'styled-components';
 const StyledSideDrawer = styled.div `
     display:flex;
     height:100vh;
-    background-color:white;
+    background-color: #CF3E4D;
     box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
     top:0;
     left:0;
     width: 300px;
     position: fixed;
-    color: black;
+    color: white;
     z-index: 200;
     justify-content: center;
     transform: translateX(${props => (props.show ? "0" : "-100%")});
@@ -29,7 +29,8 @@ const StyledSideDrawer = styled.div `
         padding: 10px;
         :hover{
             cursor: pointer;
-            background-color: violet;
+            background-color: #F2F5F0;
+            color: black;
         }
     }
     

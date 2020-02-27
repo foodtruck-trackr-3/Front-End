@@ -18,6 +18,8 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
         justify-content: space-between;
         height: 100%;
         padding: 0 1rem;
+        box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
+
     `;
 
     const ToolbarNavigationItems = styled.div `
@@ -25,7 +27,7 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
             color: black;
             text-decoration: none;
             :hover {
-                background-color: gray;
+                font-size: 18px;
             }
         }
         ul {
@@ -38,16 +40,13 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
         li {
             padding: 10px;
             margin: 0 0.5rem;
-            :hover {
-                background-color: gray;
-            }
         }
     `;
 
     const ToolbarLogo = styled.div `
         margin-left: 1rem;
         a {
-            color: orange;
+            color: #F6BD31;
             text-decoration: none;
             font-size: 1.5rem;
         }
@@ -63,13 +62,12 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
                 <div />
                 <DrawerToggleButton drawerClickHandler={drawerClickHandler} />
                 <ToolbarLogo>
-                    <a href="/">The Logo Here</a>
+                    <a href="/">FoodTruck Tracker</a>
                 </ToolbarLogo>
                 <Spacer />
             <ToolbarNavigationItems>
                 <ul>
                     <li>
-                        {" "}
                         <a href="#">Sign In</a>
                     </li>
                     <li>

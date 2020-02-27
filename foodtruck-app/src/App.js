@@ -22,7 +22,7 @@ function App() {
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
-      <main style={{ marginTop: "64px" }}>The Content of The Page</main>
+      <main style={{ marginTop: "58px" }}>The Content of The Page</main>
     </div>
   );
 }
