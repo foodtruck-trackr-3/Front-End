@@ -1,12 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import NavBar from './components/NavBar'
+import SideDrawer from './components/sideDrawer/SideDrawer';
+import Toolbar from './components/Toolbar/Toolbar'
+import Backdrop from './components/Backdrop/Backdrop'
 
 function App() {
+  const [sideDrawerOpener, setsideDrawerOpener] = useState(false);
+  const drawerTogglerHandler = () => {
+    setsideDrawerOpener(prevState => ({
+      ...prevState,
+      sideDrawerOpener: !setsideDrawerOpener
+    }));
+  };
+
+  const drawerCloser = () => {
+    setsideDrawerOpener(false);
+  };
+
   return (
     <div className="App">
-      <NavBar/>
+      <Toolbar drawerClickHandler={drawerTogglerHandler} />
+      <SideDrawer show={sideDrawerOpener} />
+      <Backdrop drawerClose={drawerCloser} />
+      <main style={{ marginTop: "64px" }}>The Content of The Page</main>
     </div>
   );
 }
