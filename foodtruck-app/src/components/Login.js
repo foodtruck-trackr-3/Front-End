@@ -60,7 +60,6 @@ const Login = () => {
 	color: white;
   appearance: none;
   margin-top: 10%;
-
   `;
 
   const Input = styled.input`
