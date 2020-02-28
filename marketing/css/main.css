@@ -133,6 +133,9 @@ table {
   font-display: swap;
   src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
 }
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
 }
@@ -237,6 +240,21 @@ body {
   .container {
     width: 50%;
   }
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+main .card {
+  background: #acb0b7;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+main .card img {
+  width: 90%;
 }
 html {
   font-size: 62.5%;
