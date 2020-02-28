@@ -1,9 +1,13 @@
 // Mixins in here
-.test() {
-  border: 1px solid #bada55;
+.test(@color) {
+  border: 1px solid @color;
 }
 .flex() {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.activeLink() {
+  background: @primaryRed;
+  color: @light;
 }
