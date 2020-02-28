@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import DrawerToggleButton from "../sideDrawer/DrawerToggleButton";
 
 const Toolbar = ({ drawerClickHandler, drawerClose }) => {
@@ -68,10 +69,14 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
             <ToolbarNavigationItems>
                 <ul>
                     <li>
-                        <a href="#">Sign Up</a>
+                        <NavLink to="/register">
+                            Sign Up
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="#">Log In</a>
+                        <NavLink to="/login">
+                            Log In
+                        </NavLink>
                     </li>
                 </ul>
             </ToolbarNavigationItems>

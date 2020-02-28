@@ -7,6 +7,6 @@ export const axiosWithAuth = () => {
     headers: {
       Authorization: token
     },
-    // baseURL: "http://localhost:5000/api" To be provided by Christopher, backend team
+    baseURL: "http://localhost:5000" 
   });
 };
