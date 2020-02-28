@@ -19,10 +19,11 @@ function App() {
 
   return (
     <div className="App">
+      <main style={{ marginTop: "58px" }}>
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
-      <main style={{ marginTop: "58px" }}>The Content of The Page</main>
+      The Content of The Page</main>
     </div>
   );
 }

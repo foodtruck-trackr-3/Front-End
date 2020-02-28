@@ -68,7 +68,7 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
             <ToolbarNavigationItems>
                 <ul>
                     <li>
-                        <a href="#">Sign In</a>
+                        <a href="#">Sign Up</a>
                     </li>
                     <li>
                         <a href="#">Log In</a>
