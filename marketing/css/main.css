@@ -273,15 +273,25 @@ body {
   }
 }
 main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 1rem;
   margin-bottom: 5rem;
 }
 main h1 {
+  text-align: center;
+  width: 100%;
   font-size: 3rem;
   margin: 1rem 0;
 }
 main .aboutName {
   padding: 1rem;
+}
+@media screen and (min-width:501px) {
+  main .aboutName {
+    width: 65%;
+  }
 }
 main .aboutName :first-child {
   font-weight: bold;
