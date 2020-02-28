@@ -23,11 +23,12 @@ function App() {
   return (
     <div className="App">
       <main style={{ marginTop: "58px" }}>
+      <Route exact path="/" component={Login} />
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
-      The Content of The Page</main>
-      <Route exact path="/" component={Login} />
+      </main>
+      
     </div>
   );
 }
