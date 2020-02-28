@@ -126,15 +126,87 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 16px;
+  font-family: "Poppins";
+}
 .container {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
+}
+.nav {
+  border-bottom: 5px solid #cf3e4d;
+  color: #283548;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+  margin-top: 2rem;
+}
+.nav div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   justify-content: space-between;
+  border-top: 5px solid #cf3e4d;
 }
-.nav {
+.logo {
+  width: 35%;
+}
+button {
+  border: 1px solid #283548;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+a {
+  text-decoration: none;
+  color: #283548;
+  padding: 1rem 0.5rem;
+}
+a:hover {
   background: #cf3e4d;
   color: #f2f5f0;
+}
+header {
+  margin: 1rem;
+}
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+main {
+  margin: 1rem;
+}
+main .aboutName {
+  padding: 1rem 0;
+}
+main .aboutName :first-child {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+footer {
+  background: #cf3e4d;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
 }
