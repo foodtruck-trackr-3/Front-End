@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Loader from "react-loader-spinner";
+import styled from 'styled-components';
+
 
 const Login = () => {
 
@@ -36,8 +38,46 @@ const Login = () => {
       });
   };
 
+  const FormGroup = styled.div`
+	width: 100%;
+	max-width: 350px;
+	padding: 15px;
+	margin: 10% auto;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+  `;
+
+  const Button = styled.button`
+  width: 100%;
+	border: none;
+	padding: 15px;
+	font-size: 14px;
+	border-radius: 3px;
+	background-color: #0077CC;
+	color: white;
+  appearance: none;
+  margin-top: 10%;
+
+  `;
+
+  const Input = styled.input`
+	box-sizing: border-box;
+	font-size: 14px;
+	padding: 15px;
+	border-radius: 3px;
+	border: none;
+	box-shadow: inset 0 0 0 1px #dee1e3;
+	width: 100%;
+	outline: none;
+  transition: all 200ms;
+  margin-top: 10%;
+
+`;
+
+
   return (
-    <div>
+    <FormGroup>
       {isLoading && (
           <div>
             <Loader type="Puff" color="#204963" height={60} width={60} />
@@ -46,23 +86,25 @@ const Login = () => {
         )}
       <h1>Welcome to Food Truck Tracker</h1>  
       <form onSubmit={login} >
-        <input
+        <Input
           type="text"
           name="username"
           value={credentials.username}
           placeholder="username"
           onChange={handleChange}
         />
-        <input
+        <Input
           type="password"
           name="password"
           placeholder="password"
           value={credentials.password}
           onChange={handleChange}
         />
-        <button onClick={loading}>Log in</button>
+        
+          <Button onClick={loading}>Log in</Button>
+        
       </form>
-    </div>
+    </FormGroup>
   )
 };
 

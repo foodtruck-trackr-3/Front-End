@@ -26,7 +26,7 @@ function App() {
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
-      The Content of The Page</main>
+      </main>
       <Route exact path="/" component={Login} />
     </div>
   );
