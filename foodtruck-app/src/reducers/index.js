@@ -14,6 +14,10 @@ export const initialState = {
           itemPrice: 0,
           customerRatings: [],
           customerRatingAvg: 0
+      }, 
+      currentLocation: {
+          location:"",
+          departureTime: ""
       }
     }],
     error: ""
