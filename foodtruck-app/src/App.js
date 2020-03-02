@@ -25,12 +25,12 @@ function App() {
   return (
     <div className="App">
       <main style={{ marginTop: "78px" }}>
-      <Route exact path="/" component={Trucklist} />  
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
+      <Route exact path="/" component={Trucklist} />  
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
       </main>
     </div>
   );

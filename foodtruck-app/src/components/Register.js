@@ -60,6 +60,9 @@ const Register = () => {
 	color: white;
   appearance: none;
   margin-top: 10%;
+  &:hover {
+    background-color: #006dcc;
+  }
   `;
 
   const Input = styled.input`
