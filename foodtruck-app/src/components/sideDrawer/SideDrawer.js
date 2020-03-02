@@ -17,7 +17,7 @@ const StyledSideDrawer = styled.div `
     transition: all .4s ease-in-ou;
 
     ul{
-        width: 200px;
+        width: 200px; 
         height:100%;
         list-style:none;
         display: flex;
