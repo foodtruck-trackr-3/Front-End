@@ -22,11 +22,11 @@ function App() {
 
   return (
     <div className="App">
-      <main style={{ marginTop: "58px" }}>
+      <main style={{ marginTop: "100px" }}>
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
-      The Content of The Page</main>
+      </main>
       <Route exact path="/" component={Login} />
     </div>
   );
