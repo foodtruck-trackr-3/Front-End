@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <main style={{ marginTop: "58px" }}>
+      <main style={{ marginTop: "78px" }}>
       <Route exact path="/" component={Trucklist} />  
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
@@ -32,7 +32,6 @@ function App() {
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
       </main>
-      
     </div>
   );
 }
