@@ -27,13 +27,13 @@ const Login = () => {
   const login = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/login", credentials)
+      .post("/api/auth/login", credentials)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("authorization", res.data.payload);
         // props.history.push("/#");
       })
       .catch(err => {
-        localStorage.removeItem("token");
+        localStorage.removeItem("authorization");
         console.log("invalid login: ", err);
       });
   };
