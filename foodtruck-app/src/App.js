@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Link, Switch } from "react-router-dom";
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import Toolbar from './components/Toolbar/Toolbar'
@@ -25,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <main style={{ marginTop: "58px" }}>
-      <Route exact path="/" component={Trucklist} />  
-      <Route exact path="/login" component={Login} />
+      <Route exact path="/" component={Login} />  
+      <ProtectedRoute exact path="/trucks" component={Trucklist} />
       <Route exact path="/register" component={Register} />
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />

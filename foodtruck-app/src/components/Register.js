@@ -26,11 +26,12 @@ const Register = () => {
   const register = e => {
     e.preventDefault();
     axios
-      .post("/api/auth/register", credentials)
+      .post("https://lftt3.herokuapp.com/api/auth/register", credentials)
       .then(res => {
           console.log(res);
         // localStorage.setItem("authorization", res.data.payload);
         // props.history.push("/#");
+          setIsLoading(false);
       })
       .catch(err => {
         // localStorage.removeItem("authorization");
@@ -63,7 +64,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <select name="role" value={credentials.role} onChange={handleChange}>
-            <option value="customer" selected>Customer</option>
+            <option defaultValue="customer">Customer</option>
             <option value="owner">Owner</option>
         </select>
         <button onClick={loading}>Sign Up</button>
