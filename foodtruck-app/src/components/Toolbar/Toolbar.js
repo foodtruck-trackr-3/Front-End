@@ -62,7 +62,7 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
         <ToolbarHeader>
             <ToolbarNavigation>
                 <div />
-                <DrawerToggleButton drawerClickHandler={drawerClickHandler} />
+                <DrawerToggleButton drawerClickHandler={drawerClickHandler} drawerClose={drawerClose} />
                 <ToolbarLogo>
                     <a href="/">FoodTruck Tracker</a>
                 </ToolbarLogo>
@@ -82,6 +82,11 @@ const Toolbar = ({ drawerClickHandler, drawerClose }) => {
                     <li>
                         <NavLink to="/trucks">
                             Truck List
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/addtruck">
+                            Add Truck
                         </NavLink>
                     </li>
                 </ul>

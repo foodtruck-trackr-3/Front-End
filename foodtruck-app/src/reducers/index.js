@@ -1,10 +1,14 @@
-// import { FETCH_DATA, UPDATE_SMURFS, SET_ERROR, ADD_SMURF } from "../actions"
+import { FETCH_DATA, UPDATE_TRUCKS, ADD_TRUCK, SET_ERROR } from "../actions";
 
 export const initialState = {
     trucks: [{
       id: 0,
+      truckName:"",
+      owner: "",
       imageOfTruck: "",
-      cuisineType: "",
+      foodType: "",
+      location: "",
+      departureTime: "",
       customerRatings: [],
       customerRatingAvg: 0,
       menu: {
@@ -14,10 +18,6 @@ export const initialState = {
           itemPrice: 0,
           customerRatings: [],
           customerRatingAvg: 0
-      }, 
-      currentLocation: {
-          location:"",
-          departureTime: ""
       }
     }],
     error: ""
@@ -25,26 +25,26 @@ export const initialState = {
 
   export const trucksReducer = (state = initialState, action) => {
     switch(action.type) {
-    //   case FETCH_DATA: 
-    //     return {
-    //       ...state,
-    //       smurfs: []
-    //     }
-    //     case UPDATE_SMURFS:
-    //       return {
-    //         ...state,
-    //         smurfs: action.payload,
-    //       }
-    //     case ADD_SMURF:
-    //       return {
-    //         ...state,
-    //         smurfs: [...state.smurfs, action.payload]
-    //       }
-    //     case SET_ERROR:
-    //       return {
-    //         ...state,
-    //         error: action.payload
-    //       }
+      case FETCH_DATA: 
+        return {
+          ...state,
+          trucks: []
+        }
+        case UPDATE_TRUCKS:
+          return {
+            ...state,
+            trucks: action.payload,
+          }
+        case ADD_TRUCK:
+          return {
+            ...state,
+            trucks: [...state.trucks, action.payload]
+          }
+        case SET_ERROR:
+          return {
+            ...state,
+            error: action.payload
+          }
   
       default: 
         return state

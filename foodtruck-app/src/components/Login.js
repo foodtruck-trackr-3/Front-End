@@ -70,6 +70,7 @@ const Login = () => {
       .catch(err => {
         localStorage.removeItem("authorization");
         console.log("invalid login: ", err);
+        setIsLoading(false)
       });
   };
 

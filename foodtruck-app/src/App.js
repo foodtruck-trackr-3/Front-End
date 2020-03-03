@@ -11,6 +11,7 @@ import Toolbar from './components/Toolbar/Toolbar'
 import Backdrop from './components/Backdrop/Backdrop'
 import Login from './components/Login';
 import Trucklist from './components/Trucklist';
+import AddTruck from './components/AddTruck';
 import Register from './components/Register';
 
 const store = createStore(reducer, applyMiddleware(thunk));
@@ -35,9 +36,10 @@ function App() {
         <main style={{ marginTop: "58px" }}>
         <Route exact path="/" component={Login} />  
         <ProtectedRoute exact path="/trucks" component={Trucklist} />
+        <ProtectedRoute exact path="/addtruck" component={AddTruck} />
         <Route exact path="/register" component={Register} />
         <Toolbar drawerClickHandler={drawerTogglerHandler} />
-        <SideDrawer show={sideDrawerOpener} />
+        <SideDrawer show={sideDrawerOpener} close={drawerCloser} />
         <Backdrop drawerClose={drawerCloser} />
         </main>
       </div>
