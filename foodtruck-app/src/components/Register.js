@@ -3,44 +3,7 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import styled from "styled-components";
 
-const Register = () => {
-
-  const [ credentials, setCredentials ] = useState({
-    username: "",
-    password: "", 
-    role: ""
-  });
-
-  const [ isLoading, setIsLoading ] = useState(false);
-
-  const loading = () => {
-    setIsLoading(true);
-  }
-
-  const handleChange = e => {
-    setCredentials({
-        ...credentials,
-        [e.target.name]: e.target.value
-      });
-  };
-
-  const register = e => {
-    e.preventDefault();
-    axios
-      .post("/api/auth/register", credentials)
-      .then(res => {
-          console.log(res);
-        // localStorage.setItem("authorization", res.data.payload);
-        // props.history.push("/#");
-      })
-      .catch(err => {
-        // localStorage.removeItem("authorization");
-        console.log("invalid login: ", err);
-      });
-  };
-
-
-  const FormGroup = styled.div`
+const FormGroup = styled.div`
 	width: 100%;
 	max-width: 350px;
 	padding: 15px;
@@ -88,6 +51,43 @@ background-color: white;
 margin-top: 10%;
 `;
 
+const Register = () => {
+
+  const [ credentials, setCredentials ] = useState({
+    username: "",
+    password: "", 
+    role: ""
+  });
+
+  const [ isLoading, setIsLoading ] = useState(false);
+
+  const loading = () => {
+    setIsLoading(true);
+  }
+
+  const handleChange = e => {
+    setCredentials({
+        ...credentials,
+        [e.target.name]: e.target.value
+      });
+  };
+
+  const register = e => {
+    e.preventDefault();
+    axios
+      .post("/api/auth/register", credentials)
+      .then(res => {
+          console.log(res);
+        // localStorage.setItem("authorization", res.data.payload);
+        // props.history.push("/#");
+      })
+      .catch(err => {
+        // localStorage.removeItem("authorization");
+        console.log("invalid login: ", err);
+      });
+  };
+
+
   return (
     <FormGroup>
       {isLoading && (
@@ -113,6 +113,7 @@ margin-top: 10%;
           onChange={handleChange}
         />
         <Select name="role" value={credentials.role} onChange={handleChange}>
+            <option value="pickone" selected>Choose One</option>
             <option value="customer" selected>Customer</option>
             <option value="owner">Owner</option>
         </Select>
