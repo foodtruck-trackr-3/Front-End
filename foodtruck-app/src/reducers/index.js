@@ -1,7 +1,7 @@
 // import { FETCH_DATA, UPDATE_SMURFS, SET_ERROR, ADD_SMURF } from "../actions"
 
 export const initialState = {
-    truck: [{
+    trucks: [{
       id: 0,
       imageOfTruck: "",
       cuisineType: "",
