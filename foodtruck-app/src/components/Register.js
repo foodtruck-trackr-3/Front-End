@@ -65,7 +65,7 @@ const Register = () => {
         />
         <select name="role" value={credentials.role} onChange={handleChange}>
             <option defaultValue="customer">Customer</option>
-            <option value="owner">Owner</option>
+            <option value="operator">Operator</option>
         </select>
         <button onClick={loading}>Sign Up</button>
       </form>
