@@ -56,13 +56,13 @@ const Spacer = styled.div`
 flex: 1;
 `;
 
-const Toolbar = ({ drawerClickHandler, drawerClose }) => {
+const Toolbar = ({ drawerClickHandler }) => {
 
     return (
         <ToolbarHeader>
             <ToolbarNavigation>
                 <div />
-                <DrawerToggleButton drawerClickHandler={drawerClickHandler} drawerClose={drawerClose} />
+                <DrawerToggleButton drawerClickHandler={drawerClickHandler} />
                 <ToolbarLogo>
                     <a href="/">FoodTruck Tracker</a>
                 </ToolbarLogo>
