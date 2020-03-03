@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { postData } from '../actions';
 
-const AddTruck = props => {
+const AddTruck = ({ postData }) => {
 
   const  [ truck, setTruck ]  = useState({
       truckName:"",
-      owner: "",
       imageOfTruck: "",
       foodType: "",
       location: "",
@@ -23,7 +22,7 @@ const AddTruck = props => {
 
   const handleAddTruck = e => {
     e.preventDefault();
-    props.postData(truck);
+    postData(truck);
     // console.log("rd: SmurfForm: handleAddSmurf, smurf object, ", smurf);
   }
 
@@ -36,13 +35,6 @@ const AddTruck = props => {
             value={truck.truckName}
             onChange={handleChanges}
             placeholder="Your Truck's name"
-          />
-          <input
-            type="text"
-            name="owner"
-            value={truck.owner}
-            onChange={handleChanges}
-            placeholder="Owner"
           />
           <input 
             type="url"

@@ -4,7 +4,7 @@ export const initialState = {
     trucks: [{
       id: 0,
       truckName:"",
-      owner: "",
+      role: "operator",
       imageOfTruck: "",
       foodType: "",
       location: "",
