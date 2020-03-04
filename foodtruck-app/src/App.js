@@ -8,7 +8,6 @@ import Login from './components/Login';
 import Trucklist from './components/Trucklist';
 import Register from './components/Register';
 
-
 function App() { 
   const [sideDrawerOpener, setsideDrawerOpener] = useState(false);
   const drawerTogglerHandler = () => {

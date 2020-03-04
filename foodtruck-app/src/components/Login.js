@@ -44,7 +44,6 @@ margin-top: 10%;
 
 `;
 
-
 const Login = () => {
 
   const [ credentials, setCredentials ] = useState({
@@ -78,7 +77,6 @@ const Login = () => {
         console.log("invalid login: ", err);
       });
   };
-
 
   return (
     <FormGroup>
