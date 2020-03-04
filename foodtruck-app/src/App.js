@@ -8,8 +8,7 @@ import Login from './components/Login';
 import Trucklist from './components/Trucklist';
 import Register from './components/Register';
 
-
-function App() {
+function App() { 
   const [sideDrawerOpener, setsideDrawerOpener] = useState(false);
   const drawerTogglerHandler = () => {
     setsideDrawerOpener(prevState => ({
@@ -24,15 +23,14 @@ function App() {
 
   return (
     <div className="App">
-      <main style={{ marginTop: "58px" }}>
-      <Route exact path="/" component={Trucklist} />  
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
+      <main style={{ marginTop: "78px" }}>
       <Toolbar drawerClickHandler={drawerTogglerHandler} />
       <SideDrawer show={sideDrawerOpener} />
       <Backdrop drawerClose={drawerCloser} />
+      <Route exact path="/" component={Trucklist} />  
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
       </main>
-      
     </div>
   );
 }
