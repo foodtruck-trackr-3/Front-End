@@ -1,17 +1,32 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import Truck from '../components/Truck';
+import Loader from "react-loader-spinner";
 
 import { getData } from '../actions';
 
 const Trucklist = ({getData, trucks, error}) => {
 
-  useEffect(() => {
-    getData();
+  // const [ isLoading, setIsLoading ] = useState(false);
+
+  // const loading = () => {
+  //   setIsLoading(true);
+  // }
+
+   useEffect(() => {
+     getData();
+    // loading();
   }, [getData]);
+
 
   return (
       <div>
+        {/* {isLoading && (
+        <div>
+          <Loader type="Puff" color="#204963" height={60} width={60} />
+          <p>Loading Trucks...</p>
+        </div>
+        )} */}
         {error ? (
           <div>{error}</div>
         ) : (<Truck trucks={trucks} />)

@@ -24,10 +24,7 @@ export const getData = () => dispatch => {
     axiosWithAuth()
       .post("/api/trucks/add", item)
       .then(res => {
-        // console.log("rd: actions index: postData .then: ", res);
-        // dispatch({ type: FETCH_DATA });
         dispatch({type: ADD_TRUCK, payload: res.data });
-        dispatch({type: UPDATE_TRUCKS, payload: res.data })
       })
       .catch(err => {
         // console.log("POST err: ", err);
