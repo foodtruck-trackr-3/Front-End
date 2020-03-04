@@ -6,10 +6,8 @@ const AddTruck = ({ postData }) => {
 
   const  [ truck, setTruck ]  = useState({
       truckName:"",
-      imageOfTruck: "",
       foodType: "",
       location: "",
-      departureTime: "",
   });
 
   const handleChanges = e => {
@@ -36,13 +34,13 @@ const AddTruck = ({ postData }) => {
             onChange={handleChanges}
             placeholder="Your Truck's name"
           />
-          <input 
+          {/* <input 
             type="url"
             name="imageOfTruck"
             value={truck.imageOfTruck}
             onChange={handleChanges}
             placeholder="Provide a URL to your truck photo"
-          />
+          /> */}
           <input 
             type="text"
             name="foodType"
@@ -57,13 +55,13 @@ const AddTruck = ({ postData }) => {
             onChange={handleChanges}
             placeholder="Current location"
           />
-          <input 
+          {/* <input 
             type="text"
             name="departureTime"
             value={truck.departureTime}
             onChange={handleChanges}
             placeholder="Departure Time"
-          />
+          /> */}
           <button>Add Truck</button>
         </form>
       </div>

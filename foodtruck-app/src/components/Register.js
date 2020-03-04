@@ -7,13 +7,12 @@ const Register = () => {
   const [ credentials, setCredentials ] = useState({
     username: "",
     password: "", 
-    role: "",
-    owner: false
+    role: ""
   });
 
   const [ isLoading, setIsLoading ] = useState(false);
 
-  const [ isOwner, setIsOwner ] = useState(false);
+  // const [ isOwner, setIsOwner ] = useState(false);
 
   const loading = () => {
     setIsLoading(true);
@@ -35,14 +34,14 @@ const Register = () => {
         // localStorage.setItem("authorization", res.data.payload);
         // props.history.push("/#");
           setIsLoading(false);
-          if (credentials.role === "operator") {
-            setIsOwner(true);
-            setCredentials({
-              ...credentials,
-              owner: isOwner
-            });
-          }
-          setIsOwner(false);
+          // if (credentials.role === "operator") {
+          //   setIsOwner(true);
+          //   setCredentials({
+          //     ...credentials,
+          //     owner: isOwner
+          //   });
+          // }
+          // setIsOwner(false);
       })
       .catch(err => {
         // localStorage.removeItem("authorization");
@@ -76,7 +75,7 @@ const Register = () => {
         />
         <select name="role" value={credentials.role} onChange={handleChange}>
             <option defaultValue="customer">Customer</option>
-            <option value="operator">Operator</option>
+            <option value="Operator">Operator</option>
         </select>
         <button onClick={loading}>Sign Up</button>
       </form>
