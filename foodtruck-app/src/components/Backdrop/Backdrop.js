@@ -6,7 +6,7 @@ const StyledBackdrop = styled.div`
     width: 100%;
     height: 100%;
     z-index: 100;
-`
+`;
 
 const Backdrop = ({drawerClose}) => {
     return (

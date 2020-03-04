@@ -22,6 +22,9 @@ background-color: #0077CC;
 color: white;
 appearance: none;
 margin-top: 10%;
+&:hover {
+  background-color: #006dcc;
+}
 `;
 
 const Input = styled.input`
@@ -73,7 +76,6 @@ const Login = () => {
         setIsLoading(false)
       });
   };
-
 
   return (
     <FormGroup>

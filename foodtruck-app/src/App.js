@@ -14,6 +14,7 @@ import Trucklist from './components/Trucklist';
 import AddTruck from './components/AddTruck';
 import Register from './components/Register';
 
+
 const store = createStore(reducer, applyMiddleware(thunk));
 
 
