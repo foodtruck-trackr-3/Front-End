@@ -7,10 +7,13 @@ const Register = () => {
   const [ credentials, setCredentials ] = useState({
     username: "",
     password: "", 
-    role: ""
+    role: "",
+    owner: false
   });
 
   const [ isLoading, setIsLoading ] = useState(false);
+
+  const [ isOwner, setIsOwner ] = useState(false);
 
   const loading = () => {
     setIsLoading(true);
@@ -32,6 +35,14 @@ const Register = () => {
         // localStorage.setItem("authorization", res.data.payload);
         // props.history.push("/#");
           setIsLoading(false);
+          if (credentials.role === "operator") {
+            setIsOwner(true);
+            setCredentials({
+              ...credentials,
+              owner: isOwner
+            });
+          }
+          setIsOwner(false);
       })
       .catch(err => {
         // localStorage.removeItem("authorization");

@@ -11,7 +11,7 @@ export const getData = () => dispatch => {
     axios
       .get("https://lftt3.herokuapp.com/api/trucks")
       .then(res => {
-        // console.log("rd: getData, trucks array: ", res.data);
+        console.log("rd: getData, trucks array: ", res.data);
         dispatch({ type: UPDATE_TRUCKS, payload: res.data });
       })
       .catch(err => {

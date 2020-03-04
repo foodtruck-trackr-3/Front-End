@@ -3,7 +3,7 @@ import React from 'react';
 const Truck = ({trucks}) => {
     return (
         trucks.map((truck) => {
-          return <div>
+          return <div key={truck.id}>
               <div>{truck.truckName}</div>
               <div>{truck.imageOfTruck}</div>
               <div>{truck.foodType}</div>
