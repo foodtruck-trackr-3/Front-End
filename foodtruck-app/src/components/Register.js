@@ -10,7 +10,7 @@ const FormGroup = styled.div`
 	margin: 10% auto;
   text-align: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  
+
 }
   `;
 
@@ -124,11 +124,11 @@ const Register = () => {
           value={credentials.password}
           onChange={handleChange}
         />
-        <select name="role" value={credentials.role} onChange={handleChange}>
+        <Select name="role" value={credentials.role} onChange={handleChange}>
             <option defaultValue="customer">Customer</option>
             <option value="Operator">Operator</option>
-        </select>
-        <button onClick={loading}>Sign Up</button>
+        </Select>
+        <Button onClick={loading}>Sign Up</Button>
       </form>
     </FormGroup>
   )
