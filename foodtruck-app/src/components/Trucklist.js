@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from "react-redux";
+import Truck from '../components/Truck';
 
-const Trucklist = () => {
+import { getData } from '../actions';
 
-    return (
-        <div>Truck List goes here</div>
-    )
+const Trucklist = ({getData, trucks, error}) => {
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
+  return (
+      <div>
+        {error ? (
+          <div>{error}</div>
+        ) : (<Truck trucks={trucks} />)
+        }
+      </div>
+  )
 }
 
-export default Trucklist
+const mapStateToProps = state => {
+  return {
+    trucks: state.trucks,
+    error: state.error
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { getData }
+)(Trucklist);

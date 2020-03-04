@@ -36,10 +36,10 @@ const StyledSideDrawer = styled.div `
     
 `
 
-const SideDrawer = ({ show }) => {
+const SideDrawer = ({ show, close }) => {
 
     return (
-        <StyledSideDrawer show={show}>
+        <StyledSideDrawer show={show} onClick={close}>
             <nav>
                 <ul>
                     <li>Home</li>

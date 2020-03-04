@@ -10,9 +10,6 @@ padding: 15px;
 margin: 10% auto;
 text-align: center;
 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
-
-}
 `;
 
 const Button = styled.button`
@@ -41,7 +38,6 @@ width: 100%;
 outline: none;
 transition: all 200ms;
 margin-top: 10%;
-
 `;
 
 const Login = () => {
@@ -69,12 +65,15 @@ const Login = () => {
     axiosWithAuth()
       .post("/api/auth/login", credentials)
       .then(res => {
-        localStorage.setItem("authorization", res.data.payload);
+        // console.log(res);
+        localStorage.setItem("authorization", res.data.token);
+        setIsLoading(false);
         // props.history.push("/#");
       })
       .catch(err => {
         localStorage.removeItem("authorization");
         console.log("invalid login: ", err);
+        setIsLoading(false)
       });
   };
 
