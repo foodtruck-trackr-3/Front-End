@@ -10,13 +10,8 @@ const Main = styled.div`
   box-shadow: 0 0.4rem 1.5rem DimGrey;
   position: relative;
   margin: 10% auto;
-  max-width: 50%;
-  @media only screen and (max-width: 550px) {
-    margin: 20%;
-  }
-  @media only screen and (max-width: 850px) {
-    margin: 20%;
-  }
+  max-width: 350px;
+
   
 `;
 
