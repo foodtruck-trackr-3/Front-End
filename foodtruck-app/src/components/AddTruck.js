@@ -1,6 +1,47 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { postData } from '../actions';
+import styled from "styled-components";
+
+const FormGroup = styled.div`
+	width: 100%;
+	max-width: 350px;
+	padding: 15px;
+	margin: 10% auto;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+  `;
+
+  const Button = styled.button`
+  width: 100%;
+	border: none;
+	padding: 15px;
+	font-size: 14px;
+	border-radius: 3px;
+	background-color: #0077CC;
+	color: white;
+  appearance: none;
+  margin-top: 10%;
+  &:hover {
+    background-color: #006dcc;
+  }
+  `;
+
+  const Input = styled.input`
+	box-sizing: border-box;
+	font-size: 14px;
+	padding: 15px;
+	border-radius: 3px;
+	border: none;
+	box-shadow: inset 0 0 0 1px #dee1e3;
+	width: 100%;
+	outline: none;
+  transition: all 200ms;
+  margin-top: 10%;
+
+`;
 
 const AddTruck = ({ postData }) => {
 
@@ -26,8 +67,8 @@ const AddTruck = ({ postData }) => {
 
   return (
       <div>
-        <form onSubmit={handleAddTruck}>
-          <input
+        <FormGroup onSubmit={handleAddTruck}>
+          <Input
             type="text"
             name="truckName"
             value={truck.truckName}
@@ -41,14 +82,14 @@ const AddTruck = ({ postData }) => {
             onChange={handleChanges}
             placeholder="Provide a URL to your truck photo"
           /> */}
-          <input 
+          <Input 
             type="text"
             name="foodType"
             value={truck.foodType}
             onChange={handleChanges}
             placeholder="Type of food"
           />
-          <input 
+          <Input 
             type="text"
             name="location"
             value={truck.location}
@@ -62,8 +103,8 @@ const AddTruck = ({ postData }) => {
             onChange={handleChanges}
             placeholder="Departure Time"
           /> */}
-          <button>Add Truck</button>
-        </form>
+          <Button>Add Truck</Button>
+        </FormGroup>
       </div>
   )
 }
