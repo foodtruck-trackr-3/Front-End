@@ -11,7 +11,10 @@ import Toolbar from './components/Toolbar/Toolbar'
 import Backdrop from './components/Backdrop/Backdrop'
 import Login from './components/Login';
 import Trucklist from './components/Trucklist';
+import MyTrucks from './components/MyTrucks';
 import AddTruck from './components/AddTruck';
+import OwnedTruck from './components/OwnedTruck';
+import UpdateTruck from './components/UpdateTruck';
 import Register from './components/Register';
 
 
@@ -36,8 +39,15 @@ function App() {
       <div className="App">
         <main style={{ marginTop: "58px" }}>
         <Route exact path="/" component={Login} />  
-        <ProtectedRoute exact path="/trucks" component={Trucklist} />
-        <ProtectedRoute exact path="/addtruck" component={AddTruck} />
+        <ProtectedRoute path="/trucks" component={Trucklist} />
+        <ProtectedRoute path="/addtruck" component={AddTruck} />
+        <ProtectedRoute path="/mytrucks" component={MyTrucks} />
+        <Route 
+          path="/update-truck/:id"
+          render={props => (
+            <UpdateTruck {...props} />
+          )}
+        />
         <Route exact path="/register" component={Register} />
         <Toolbar drawerClickHandler={drawerTogglerHandler} />
         <SideDrawer show={sideDrawerOpener} close={drawerCloser} />
