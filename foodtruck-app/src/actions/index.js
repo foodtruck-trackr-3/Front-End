@@ -11,12 +11,24 @@ export const getData = () => dispatch => {
     axios
       .get("https://lftt3.herokuapp.com/api/trucks")
       .then(res => {
-        console.log("rd: getData, trucks array: ", res.data);
+        console.log("rd: getData, actions", res.data);
         dispatch({ type: UPDATE_TRUCKS, payload: res.data });
       })
       .catch(err => {
-        // console.log("error fetching data from api. err: ", err);
         dispatch({ type: SET_ERROR, payload: "error fetching data from api", err });
+      })
+  }
+
+  export const getMyTrucks = () => dispatch => {
+    axiosWithAuth()
+      .get("/api/trucks/mytrucks")
+      .then(res => {
+        console.log("rd: getMyTrucks, actions", res.data);
+        dispatch({ type: UPDATE_TRUCKS, payload: res.data });
+        // console.log("rd: actions: getMyTrucks", res.data)
+      })
+      .catch(err => {
+        dispatch({ type: SET_ERROR, payload: "error fetching MyTrucks from api", err });
       })
   }
 
@@ -24,13 +36,39 @@ export const getData = () => dispatch => {
     axiosWithAuth()
       .post("/api/trucks/add", item)
       .then(res => {
-        // console.log("rd: actions index: postData .then: ", res);
-        // dispatch({ type: FETCH_DATA });
+        console.log("rd: postData, actions", res.data)
         dispatch({type: ADD_TRUCK, payload: res.data });
-        dispatch({type: UPDATE_TRUCKS, payload: res.data })
       })
       .catch(err => {
-        // console.log("POST err: ", err);
         dispatch({ type: SET_ERROR, payload: "error posting data to api", err });
+      })
+  }
+
+  export const putData = (item) => dispatch => {
+    axiosWithAuth()
+      .put(`/api/trucks/update/${item.id}`, item)
+      .then(res => {
+        console.log("rd: putData, actions", res.data)
+        // dispatch({type: ADD_TRUCK, payload: res.data });
+        // dispatch({ type: UPDATE_TRUCKS, payload: res.data });
+        // dispatch(push("/trucks")); 
+      })
+      .catch(err => {
+        dispatch({ type: SET_ERROR, payload: "error put data to api", err });
+      })
+  }
+
+  export const delTruck = (item) => dispatch => {
+    axiosWithAuth()
+      .delete(`/api/trucks/remove/${item.id}`)
+      .then(res => {
+        console.log("rd: delTruck: actions, ", res.data)
+        // console.log("rd: delTruck, actions", res.data)
+        // dispatch({ type: DELETE_TRUCK, payload: res.data })
+        // dispatch({ type: UPDATE_TRUCKS, payload: res.data });
+        
+      })
+      .catch(err => {
+        dispatch({ type: SET_ERROR, payload: "error delete data from api", err });
       })
   }

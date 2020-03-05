@@ -10,8 +10,6 @@ const FormGroup = styled.div`
 	margin: 10% auto;
   text-align: center;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
-}
   `;
 
   const Button = styled.button`
@@ -40,7 +38,6 @@ const FormGroup = styled.div`
 	outline: none;
   transition: all 200ms;
   margin-top: 10%;
-
 `;
 
 const Select = styled.select`
@@ -62,8 +59,6 @@ const Register = () => {
 
   const [ isLoading, setIsLoading ] = useState(false);
 
-  // const [ isOwner, setIsOwner ] = useState(false);
-
   const loading = () => {
     setIsLoading(true);
   }
@@ -84,14 +79,6 @@ const Register = () => {
         // localStorage.setItem("authorization", res.data.payload);
         // props.history.push("/#");
           setIsLoading(false);
-          // if (credentials.role === "operator") {
-          //   setIsOwner(true);
-          //   setCredentials({
-          //     ...credentials,
-          //     owner: isOwner
-          //   });
-          // }
-          // setIsOwner(false);
       })
       .catch(err => {
         // localStorage.removeItem("authorization");
@@ -108,7 +95,7 @@ const Register = () => {
             <p>Registering you now...</p>
           </div>
         )}
-      <h1>Register as a customer or as an operator</h1>  
+      <h1>Sign up as a customer or operator</h1>  
       <form onSubmit={register} >
         <Input
           type="text"
@@ -125,7 +112,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <Select name="role" value={credentials.role} onChange={handleChange}>
-            <option defaultValue="customer">Customer</option>
+            <option defaultValue="Customer">Customer</option>
             <option value="Operator">Operator</option>
         </Select>
         <Button onClick={loading}>Sign Up</Button>

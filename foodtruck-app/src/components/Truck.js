@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const Main = styled.div`
@@ -11,8 +12,6 @@ const Main = styled.div`
   position: relative;
   margin: 10% auto;
   max-width: 350px;
-
-  
 `;
 
 const Header = styled.div`
@@ -31,12 +30,10 @@ const SubText = styled.div`
   color: gray;
 `;
 
-
-const Truck = ({trucks}) => {
+const Truck = props => {
     return (
-        trucks.map((truck) => {
+        props.trucks.map((truck) => {
           return <Main key={truck.id}>
-              
               <Header>{truck.truckName}</Header>
               <SubText>{truck.foodType}</SubText>
               <SubText>{truck.location}</SubText>

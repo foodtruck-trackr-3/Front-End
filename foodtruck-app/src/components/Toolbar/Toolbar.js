@@ -89,6 +89,11 @@ const Toolbar = ({ drawerClickHandler }) => {
                             Add Truck
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/mytrucks">
+                            My Trucks
+                        </NavLink>
+                    </li>
                 </ul>
             </ToolbarNavigationItems>
           </ToolbarNavigation>

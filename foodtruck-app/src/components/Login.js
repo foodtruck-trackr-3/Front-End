@@ -88,7 +88,8 @@ const Login = () => {
             <p>Logging you in now...</p>
           </div>
         )}
-      <h1>Welcome to Food Truck Tracker</h1>  
+      <h1>Welcome to Food Truck Tracker</h1>
+      <h2>Log In</h2>  
       <form onSubmit={login} >
         <Input
           type="text"

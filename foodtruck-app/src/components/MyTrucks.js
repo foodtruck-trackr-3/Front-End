@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-import Truck from '../components/Truck';
-import Loader from "react-loader-spinner";
+import OwnedTruck from '../components/OwnedTruck';
+import { getMyTrucks } from '../actions';
 
-import { getData } from '../actions';
 
-const Trucklist = ({getData, trucks, error}) => {
+
+const MyTrucks = ({getMyTrucks, trucks, error}) => {
+
+    // const myTrucks = trucks.filter(truck => truck.owner === "berto")
 
   // const [ isLoading, setIsLoading ] = useState(false);
 
@@ -14,9 +16,9 @@ const Trucklist = ({getData, trucks, error}) => {
   // }
 
    useEffect(() => {
-     getData();
+     getMyTrucks();
     // loading();
-  }, [getData]);
+  }, [getMyTrucks]);
 
 
   return (
@@ -29,8 +31,7 @@ const Trucklist = ({getData, trucks, error}) => {
         )} */}
         {error ? (
           <div>{error}</div>
-        ) : (<Truck trucks={trucks} />)
-        }
+        ) : (<OwnedTruck trucks={trucks} />)}
       </div>
   )
 }
@@ -44,5 +45,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getData }
-)(Trucklist);
+  { getMyTrucks }
+)(MyTrucks);
