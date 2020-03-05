@@ -13,7 +13,6 @@ import Login from './components/Login';
 import Trucklist from './components/Trucklist';
 import MyTrucks from './components/MyTrucks';
 import AddTruck from './components/AddTruck';
-import OwnedTruck from './components/OwnedTruck';
 import UpdateTruck from './components/UpdateTruck';
 import Register from './components/Register';
 

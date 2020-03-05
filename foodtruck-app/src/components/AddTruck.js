@@ -40,7 +40,6 @@ const FormGroup = styled.div`
 	outline: none;
   transition: all 200ms;
   margin-top: 10%;
-
 `;
 
 const AddTruck = ({ postData }) => {
@@ -56,18 +55,16 @@ const AddTruck = ({ postData }) => {
       ...truck,
       [e.target.name] : e.target.value 
     });
-    // console.log("rd: SmurfForm: handleChanges: smurf object, ", smurf);
   }
 
   const handleAddTruck = e => {
     e.preventDefault();
     postData(truck);
-    // console.log("rd: SmurfForm: handleAddSmurf, smurf object, ", smurf);
   }
 
   return (
       <div>
-        <FormGroup onSubmit={handleAddTruck}>
+        <FormGroup>
           <Input
             type="text"
             name="truckName"
@@ -103,7 +100,7 @@ const AddTruck = ({ postData }) => {
             onChange={handleChanges}
             placeholder="Departure Time"
           /> */}
-          <Button>Add Truck</Button>
+          <Button onClick={handleAddTruck}>Add Truck</Button>
         </FormGroup>
       </div>
   )
