@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import OwnedTruck from '../components/OwnedTruck';
-
-
 import { getMyTrucks } from '../actions';
+
+
 
 const MyTrucks = ({getMyTrucks, trucks, error}) => {
 

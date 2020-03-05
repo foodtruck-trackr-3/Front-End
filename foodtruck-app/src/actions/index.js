@@ -57,3 +57,18 @@ export const getData = () => dispatch => {
         dispatch({ type: SET_ERROR, payload: "error put data to api", err });
       })
   }
+
+  export const delTruck = (item) => dispatch => {
+    axiosWithAuth()
+      .delete(`/api/trucks/remove/${item.id}`)
+      .then(res => {
+        console.log("rd: delTruck: actions, ", res.data)
+        // console.log("rd: delTruck, actions", res.data)
+        // dispatch({ type: DELETE_TRUCK, payload: res.data })
+        // dispatch({ type: UPDATE_TRUCKS, payload: res.data });
+        
+      })
+      .catch(err => {
+        dispatch({ type: SET_ERROR, payload: "error delete data from api", err });
+      })
+  }
