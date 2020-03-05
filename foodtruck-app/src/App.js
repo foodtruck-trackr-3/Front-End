@@ -34,7 +34,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <main style={{ marginTop: "58px" }}>
+        <main style={{ marginTop: "98px" }}>
         <Route exact path="/" component={Login} />  
         <ProtectedRoute exact path="/trucks" component={Trucklist} />
         <ProtectedRoute exact path="/addtruck" component={AddTruck} />
