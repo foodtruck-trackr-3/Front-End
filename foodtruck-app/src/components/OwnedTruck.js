@@ -33,8 +33,6 @@ const SubText = styled.div`
 `;
 
 
-
-
 const OwnedTruck = props => {
 
     const deleteTruck = item => {
