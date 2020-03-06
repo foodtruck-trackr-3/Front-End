@@ -70,16 +70,6 @@ const Toolbar = ({ drawerClickHandler }) => {
             <ToolbarNavigationItems>
                 <ul>
                     <li>
-                        <NavLink to="/register">
-                            Sign Up
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/">
-                            Log In
-                        </NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/trucks">
                             Truck List
                         </NavLink>
@@ -92,6 +82,16 @@ const Toolbar = ({ drawerClickHandler }) => {
                     <li>
                         <NavLink to="/mytrucks">
                             My Trucks
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/register">
+                            Sign Up
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/">
+                            Log In
                         </NavLink>
                     </li>
                 </ul>
