@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
+
 
 const StyledSideDrawer = styled.div `
     display:flex;
@@ -25,7 +27,9 @@ const StyledSideDrawer = styled.div `
         justify-content: center;
     }
 
-    li{
+    a{
+        color: black;
+        text-decoration: none;
         padding: 10px;
         :hover{
             cursor: pointer;
@@ -42,8 +46,8 @@ const SideDrawer = ({ show, close }) => {
         <StyledSideDrawer show={show} onClick={close}>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
+                    <a href="https://foodtruck-trackr-3.github.io/Marketing/">Home</a>
+                    <a href="https://foodtruck-trackr-3.github.io/Marketing/about.html">About</a>
                 </ul>
             </nav>
         </StyledSideDrawer>
