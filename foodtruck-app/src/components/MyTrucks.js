@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from "react-redux";
-// import OwnedTruck from '../components/OwnedTruck';
 import { getMyTrucks, delTruck } from '../actions';
 
 const Main = styled.div`
@@ -40,6 +39,7 @@ const BtnContainer = styled.div`
 
 const Button = styled.button`
   width: 25%;
+  cursor: pointer;
 	border: none;
 	padding: 15px;
 	font-size: 14px;
@@ -55,6 +55,7 @@ const Button = styled.button`
 
   const DeleteButton = styled.button`
   width: 25%;
+  cursor: pointer;
 	border: none;
 	padding: 15px;
 	font-size: 14px;
@@ -71,13 +72,12 @@ const Button = styled.button`
 
 const MyTrucks = props => {
 
-    // const myTrucks = trucks.filter(truck => truck.owner === "berto")
-
   // const [ isLoading, setIsLoading ] = useState(false);
 
   // const loading = () => {
   //   setIsLoading(true);
   // }
+
   const deleteTruck = item => {
     props.delTruck(item);   
   }

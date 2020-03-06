@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Link, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import { createStore, applyMiddleware } from "redux";
