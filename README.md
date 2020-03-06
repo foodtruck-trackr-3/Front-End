@@ -6,9 +6,9 @@ operations.
 
 Credits:
 Project Manager:
-Niki Bhatt
+- Niki Bhatt
 Front-end:
-Jose Perez Guerrero
+- Jose Perez Guerrero
 Roberto Delgado
 Backend:
 Christopher Quinn
