@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { useHistory } from "react-router-dom";
 
 export const FETCH_DATA = "FETCH_DATA";
 export const UPDATE_TRUCKS = "UPDATE_TRUCKS";
 export const ADD_TRUCK = "ADD_TRUCK";
 export const SET_ERROR = "SET_ERROR";
+export const DELETE_TRUCK = "DELETE_TRUCK";
 
 export const getData = () => dispatch => {
     dispatch({ type: FETCH_DATA });
@@ -48,10 +50,9 @@ export const getData = () => dispatch => {
     axiosWithAuth()
       .put(`/api/trucks/update/${item.id}`, item)
       .then(res => {
-        console.log("rd: putData, actions", res.data)
+        console.log("rd: putData, actions", res.data);
         // dispatch({type: ADD_TRUCK, payload: res.data });
         // dispatch({ type: UPDATE_TRUCKS, payload: res.data });
-        // dispatch(push("/trucks")); 
       })
       .catch(err => {
         dispatch({ type: SET_ERROR, payload: "error put data to api", err });
@@ -62,13 +63,14 @@ export const getData = () => dispatch => {
     axiosWithAuth()
       .delete(`/api/trucks/remove/${item.id}`)
       .then(res => {
-        console.log("rd: delTruck: actions, ", res.data)
+        console.log("rd: delTruck: actions, ", res.data);
+        // dispatch({ type: FETCH_DATA });
         // console.log("rd: delTruck, actions", res.data)
-        // dispatch({ type: DELETE_TRUCK, payload: res.data })
+        dispatch({ type: DELETE_TRUCK, payload: res.data })
         // dispatch({ type: UPDATE_TRUCKS, payload: res.data });
         
       })
       .catch(err => {
-        dispatch({ type: SET_ERROR, payload: "error delete data from api", err });
+        dispatch({ type: SET_ERROR, payload: "error deleting data from api", err });
       })
   }

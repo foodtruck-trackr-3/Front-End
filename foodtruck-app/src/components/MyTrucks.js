@@ -82,7 +82,7 @@ const MyTrucks = props => {
   // }
 
   const deleteTruck = item => {
-    props.delTruck(item);   
+    props.delTruck(item);
   }
 
   const updateTruck = item => {
@@ -91,7 +91,7 @@ const MyTrucks = props => {
 
    useEffect(() => {
      props.getMyTrucks();
-  }, []);
+  }, [props.getMyTrucks]);
 
 
   return (

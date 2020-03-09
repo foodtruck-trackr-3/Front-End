@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import styled from 'styled-components';
-// import Truck from '../components/Truck';
 import Loader from "react-loader-spinner";
 
 import { getData } from '../actions';
