@@ -64,11 +64,7 @@ export const getData = () => dispatch => {
       .delete(`/api/trucks/remove/${item.id}`)
       .then(res => {
         console.log("rd: delTruck: actions, ", res.data);
-        // dispatch({ type: FETCH_DATA });
-        // console.log("rd: delTruck, actions", res.data)
-        dispatch({ type: DELETE_TRUCK, payload: res.data })
-        // dispatch({ type: UPDATE_TRUCKS, payload: res.data });
-        
+        dispatch({ type: DELETE_TRUCK, payload: res.data })   
       })
       .catch(err => {
         dispatch({ type: SET_ERROR, payload: "error deleting data from api", err });
