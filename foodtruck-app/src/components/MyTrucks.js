@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import styled from 'styled-components';
 import { connect } from "react-redux";
 import { getMyTrucks, delTruck } from '../actions';
@@ -72,6 +73,8 @@ const Button = styled.button`
 
 const MyTrucks = props => {
 
+  const { push } = useHistory();
+
   // const [ isLoading, setIsLoading ] = useState(false);
 
   // const loading = () => {
@@ -82,9 +85,12 @@ const MyTrucks = props => {
     props.delTruck(item);   
   }
 
+  const updateTruck = item => {
+    push(`/update-truck/${item.id}`)
+  }
+
    useEffect(() => {
      props.getMyTrucks();
-    // loading();
   }, []);
 
 
@@ -104,7 +110,10 @@ const MyTrucks = props => {
             <SubText>{truck.foodType}</SubText>
             <SubText>{truck.location}</SubText>
             <BtnContainer>
-              <Button onClick={() => props.history.push(`/update-truck/${truck.id}`)}>
+              <Button onClick={e => {
+                e.stopPropagation();
+                updateTruck(truck)}
+              }>
                   Edit
               </Button>
               <DeleteButton onClick={e => {
