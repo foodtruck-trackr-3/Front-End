@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Link, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import { createStore, applyMiddleware } from "redux";
@@ -40,13 +40,7 @@ function App() {
         <Route exact path="/" component={Login} />  
         <ProtectedRoute path="/trucks" component={Trucklist} />
         <ProtectedRoute path="/addtruck" component={AddTruck} />
-        {/* <ProtectedRoute path="/mytrucks" component={MyTrucks} /> */}
-        <Route 
-          path="/mytrucks"
-          render={props => (
-            <MyTrucks {...props} />
-          )}
-        />
+        <ProtectedRoute path="/mytrucks" component={MyTrucks} />
         <Route 
           path="/update-truck/:id"
           render={props => (

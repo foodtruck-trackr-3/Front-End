@@ -16,6 +16,7 @@ const FormGroup = styled.div`
 
   const Button = styled.button`
   width: 100%;
+  cursor: pointer;
 	border: none;
 	padding: 15px;
 	font-size: 14px;
